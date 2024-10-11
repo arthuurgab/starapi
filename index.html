@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <title>Star Wars Wiki</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'Star Jedi';
+        src: url('fonts/starjedi/Starjedi.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Star Jedi Hollow';
+        src: url('fonts/starjedi/Starjhol.ttf') format('truetype');
+    }
+
+    h1 {
+        font-family: 'Star Jedi', sans-serif;
+    }
+
+    p {
+        font-family: 'Nunito', sans-serif;
+    }
+</style>
+<body>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="imagens/star wars navbar.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Star Wars Wiki</span>
+            </a>
+            <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="index.html" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Naves</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid relative">
+        <img src="imagens/imagehome.jpg" alt="imagemhome" class="w-full">
+        <div class="absolute inset-0 grid grid-cols-2 gap-3">
+            <div class="flex items-center justify-center">
+                <img src="imagens/star wars logo.png" alt="starwars_logo">
+            </div>
+            <div class="flex items-center justify-center">
+                <div style="width:100%;height:0;padding-bottom:80%;position:relative;">
+                    <iframe src="https://giphy.com/embed/QLnxfxw4YDmBOHAGFU" width="80%" height="80%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: #ef8b27;">
+        <br>
+        <h1 class="text-6xl text-center font-bold">naves</h1>
+        <h1 class="text-2xl text-center font-bold">veja abaixo as principais naves da Franquia <span class="text-orange-700">Wars</span></h1>
+        <br>
+        <div class="bg-gray-400 bg-opacity-80 rounded-lg p-6 mt-10 max-w-sm mx-auto shadow-lg text-center">
+            <h1 class="text-2xl font-bold mb-4">Escolha uma opção</h1>
+            <button id="verTodasNaves" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg mb-2 w-full">
+                <p>Ver Todas as Naves</p>
+            </button>
+            
+            <button id="verNavesComPassageiros" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg mb-2 w-full">
+                <p>Ver Naves com Passageiros</p>
+            </button>
+
+            <button id="verNavesPorFabricantes" data-modal-target="fabricante" data-modal-toggle="fabricante" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mb-2 w-full">
+                <p>Ver Naves por Fabricantes</p>
+            </button>
+            <div id="fabricante" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full max-w-2xl max-h-full">
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <h1 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                Fabricantes
+                            </h1>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="fabricante">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <div class="p-4 md:p-5 space-y-4" id="fabricantes">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="verLogs" data-modal-target="default-modal" data-modal-toggle="default-modal" class="bg-amber-500 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded-lg w-full">
+                <p>Ver Logs</p>
+            </button>
+            <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full max-w-2xl max-h-full">
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <h1 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                Registro de Logs
+                            </h1>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <div class="p-4 md:p-5 space-y-4" >
+                            <div class="relative overflow-x-auto">
+                                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                        <tr>
+                                            <th scope="col" class="px-6 py-3">ID</th>
+                                            <th scope="col" class="px-6 py-3">Data/Hora</th>
+                                            <th scope="col" class="px-6 py-3">API</th>
+                                            <th scope="col" class="">Método</th>
+                                            <th scope="col" class="">Resultado</th>
+                                            <th scope="col" class="">Lixeira</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="logs">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fabricantes"></div>
+        <div id="cardNaves" class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 mt-6"></div>
+        <br>
+    </div>
+</body>
+<script>
+    document.getElementById('verTodasNaves').addEventListener('click', verTodasNaves);
+    document.getElementById('verNavesComPassageiros').addEventListener('click', verNavesComPassageiros);
+    document.getElementById('verNavesPorFabricantes').addEventListener('click', verNavesPorFabricantes);
+    document.getElementById('verLogs').addEventListener('click', verLogs);
+
+    // Funções LOGS
+    function deletarLogs(logId){
+        const apiLogs = `https://www.piway.com.br/unoesc/api/excluir/log/${logId}/aluno/435200`;
+        fetch(apiLogs)
+            verLogs();
+    }
+
+    function insirirLog(resultado, metodo) {
+        const apiLogs = `https://www.piway.com.br/unoesc/api/inserir/log/435200/swapi/${metodo}/${resultado}`;
+        fetch(apiLogs)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+            verLogs()
+    }
+
+    // Funções métodos das naves
+    function verTodasNaves() {
+        const api = 'https://swapi.dev/api/starships/';
+        fetch(api)
+            .then(response => response.json())
+            .then(data => {
+                const naves = data.results;
+                const cardNaves = document.getElementById('cardNaves');
+                cardNaves.innerHTML = '';
+
+                naves.forEach(nave => {
+                    const card = document.createElement('div');
+                    card.classList.add('bg-white', 'border', 'border-gray-200', 'rounded-lg', 'shadow-md');
+
+                    card.innerHTML = `
+                        <div class="p-5">
+                            <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">${nave.name}</h1>
+                            <p class="mb-3 font-normal text-gray-700"><strong>Modelo:</strong> ${nave.model}</p>
+                            <p class="mb-3 font-normal text-gray-700"><strong>Fabricante:</strong> ${nave.manufacturer}</p>
+                            <p class="mb-3 font-normal text-gray-700"><strong>Passageiros:</strong> ${nave.passengers}</p>
+                        </div>
+                    `;
+                    cardNaves.appendChild(card);
+                });
+
+                const resultado = naves.length;
+                insirirLog(resultado, 'VerTodasNaves');
+            })
+            .catch(error => console.error('Erro ao carregar os logs:', error));
+    }
+
+    function verNavesComPassageiros() {
+        const api = 'https://swapi.dev/api/starships/';
+        fetch(api)
+            .then(response => response.json())
+            .then(data => {
+                const naves = data.results.filter(naves => parseInt(naves.passengers) > 0);
+                const cardNaves = document.getElementById('cardNaves');
+                cardNaves.innerHTML = '';
+
+                naves.forEach(nave => {
+                    const card = document.createElement('div');
+                    card.classList.add('bg-white', 'border', 'border-gray-200', 'rounded-lg', 'shadow-md');
+
+                    card.innerHTML = `
+                        <div class="p-5">
+                            <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">${nave.name}</h1>
+                            <p class="mb-3 font-normal text-gray-700"><strong>Modelo:</strong> ${nave.model}</p>
+                            <p class="mb-3 font-normal text-gray-700"><strong>Fabricante:</strong> ${nave.manufacturer}</p>
+                            <p class="mb-3 font-normal text-gray-700"><strong>Passageiros:</strong> ${nave.passengers}</p>
+                        </div>
+                    `;
+                    cardNaves.appendChild(card);
+                });
+                const resultado = naves.length;
+                insirirLog(resultado, 'verNavesPassageiros');
+            })
+        .catch(error => console.error('Erro ao buscar as naves:', error));
+        
+    }
+
+    function verNavesPorFabricantes() {
+    const api = "https://swapi.dev/api/starships/";
+    
+    fetch(api)
+        .then(response => response.json())
+        .then(data => {
+            const navesPorFabricante = data.results.reduce((acc, nave) => {
+                const fabricante = nave.manufacturer;
+
+                // Verifica se o fabricante já existe no acumulador
+                if (!acc[fabricante]) {
+                    acc[fabricante] = [];
+                }
+
+                // Adiciona a nave à lista do fabricante
+                acc[fabricante].push(nave);
+                return acc;
+            }, {});
+
+            // Manipula o modal após a finalização do reduce
+            const modal = document.getElementById('fabricantes');
+            modal.innerHTML = `
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+                    ${Object.keys(navesPorFabricante).map(fabricante => `
+                        <div class="grid-item">
+                            <button class="fabricante-btn w-full h-20 bg-gray-800 text-blue-400 font-bold py-2 px-4 rounded-lg hover:bg-gray-700 hover:text-white border border-blue-500 focus:ring-4 focus:ring-blue-300 transition-all duration-300" onclick="navesPorFabri('${fabricante}', navesPorFabricante)">
+                                ${fabricante}
+                            </button>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        })
+        .catch(error => console.error("Erro ao buscar as naves:", error));
+}
+
+function navesPorFabri(fabricante, navesPorFabricante) {
+    // Limpa a área onde os cartões das naves serão exibidos
+    const cardNaves = document.getElementById('cardNaves'); // ID do container onde os cartões serão adicionados
+    cardNaves.innerHTML = ''; // Limpa o conteúdo anterior
+
+    // Verifica se existem naves para o fabricante selecionado
+    if (navesPorFabricante[fabricante]) {
+        navesPorFabricante[fabricante].forEach(nave => {
+            // Cria um cartão para cada nave
+            const card = document.createElement('div');
+            card.classList.add('bg-white', 'border', 'border-gray-200', 'rounded-lg', 'shadow-md', 'mb-4');
+
+            card.innerHTML = `
+                <div class="p-5">
+                    <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">${nave.name}</h1>
+                    <p class="mb-3 font-normal text-gray-700"><strong>Modelo:</strong> ${nave.model || 'Desconhecido'}</p>
+                    <p class="mb-3 font-normal text-gray-700"><strong>Fabricante:</strong> ${nave.manufacturer}</p>
+                    <p class="mb-3 font-normal text-gray-700"><strong>Passageiros:</strong> ${nave.passengers || 'N/A'}</p>
+                </div>
+            `;
+            // Adiciona o cartão ao container
+            cardNaves.appendChild(card);
+        });
+    } else {
+        // Se não houver naves para o fabricante, exibe uma mensagem
+        cardNaves.innerHTML = `<p class="text-gray-700">Nenhuma nave encontrada para o fabricante "${fabricante}".</p>`;
+    }
+}
+
+
+
+    // Função para ver os LOGS
+    function verLogs() {
+        const apiLogs = 'https://www.piway.com.br/unoesc/api/logs/435200';
+        fetch(apiLogs)
+            .then(response => response.json())
+            .then(data => {
+                const cardLogs = document.getElementById('logs');
+                cardLogs.innerHTML = '';
+                for (let i = 0; i < data.length; i++) {
+                    const log = data[i];
+                    const row = document.createElement('tr');
+                    row.className = "bg-white border-b dark:bg-gray-800 dark:border-gray-700";
+                    row.innerHTML = `
+                        <td class="px-6 py-4">${log.idlog}</td>
+                        <td class="px-6 py-4">${log.log}</td>
+                        <td class="px-3 py-2">${log.api}</td>
+                        <td class="">${log.metodo}</td>
+                        <td class="">${log.resultado}</td>
+                        <td class="">
+                            <button type="button" data-value-log='${log.idlog}' class="log text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                <i class='bx bx-trash'></i>
+                            </button>
+                        </td>
+                    `;
+                    cardLogs.appendChild(row);
+
+                    const deleteButton = row.querySelector('.log');
+                    deleteButton.addEventListener('click', function() {
+                        const logId = this.getAttribute('data-value-log');
+                        deletarLogs(logId)
+                        
+                    });
+                }
+            })
+            .catch(error => console.error('Erro ao carregar os logs:', error));
+    }
+</script>
+</html>
+
